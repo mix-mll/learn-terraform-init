@@ -1,5 +1,5 @@
 init:
-	terraform init
+	terraform init -upgrade
 
 lint:
 	terraform validate
