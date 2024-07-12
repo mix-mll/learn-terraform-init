@@ -1,3 +1,6 @@
+hello:
+	echo "hello"
+
 init:
 	terraform init -upgrade
 
