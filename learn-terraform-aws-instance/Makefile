@@ -3,3 +3,6 @@ plan:
 
 apply:
 	terraform apply -var "instance_name=YetAnotherName" -auto-approve
+
+output:
+	terraform output
