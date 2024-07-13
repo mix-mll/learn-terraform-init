@@ -6,3 +6,6 @@ apply:
 
 output:
 	terraform output
+
+destroy:
+	terraform destroy -auto-approve
