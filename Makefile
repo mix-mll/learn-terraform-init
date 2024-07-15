@@ -24,3 +24,6 @@ tf_plan:
 
 show:
 	terraform show "tfplan"
+
+plan_to_json:
+	terraform show -json "tfplan" | jq > tfplan.json
