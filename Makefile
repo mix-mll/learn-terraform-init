@@ -18,3 +18,9 @@ state:
 aws_var:
 	echo ${AWS_ACCESS_KEY_ID}
 	echo ${AWS_SECRET_ACCESS_KEY}
+
+tf_plan:
+	terraform plan -out "tfplan"
+
+show:
+	terraform show "tfplan"
