@@ -39,3 +39,10 @@ query_json_plan:
 # array	
 	jq '.relevant_attributes' tfplan.json
 	jq '.relevant_attributes .[] | .resource' tfplan.json
+
+
+destoy_plan:
+	terraform plan -destroy -out "tfplan-destroy"
+
+destroy_apply:
+	terraform apply "tfplan-destroy"
