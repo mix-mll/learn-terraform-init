@@ -12,9 +12,7 @@
   "planned_values": {
     "outputs": {
       "bucket_name": {
-        "sensitive": false,
-        "type": "string",
-        "value": "terraform-20240716141403157800000001"
+        "sensitive": false
       }
     },
     "root_module": {
@@ -549,50 +547,7 @@
           "provider_name": "registry.terraform.io/hashicorp/aws",
           "schema_version": 0,
           "values": {
-            "acceleration_status": "",
-            "acl": null,
-            "arn": "arn:aws:s3:::terraform-20240716141403157800000001",
-            "bucket": "terraform-20240716141403157800000001",
-            "bucket_domain_name": "terraform-20240716141403157800000001.s3.amazonaws.com",
-            "bucket_prefix": "terraform-",
-            "bucket_regional_domain_name": "terraform-20240716141403157800000001.s3.us-east-1.amazonaws.com",
-            "cors_rule": [],
             "force_destroy": false,
-            "grant": [
-              {
-                "id": "d9450f1eec5292a76f9da82c2c50189761dd41e3ed5531d93fbcb114d2841fc3",
-                "permissions": [
-                  "FULL_CONTROL"
-                ],
-                "type": "CanonicalUser",
-                "uri": ""
-              }
-            ],
-            "hosted_zone_id": "Z3AQBSTGFYJSTF",
-            "id": "terraform-20240716141403157800000001",
-            "lifecycle_rule": [],
-            "logging": [],
-            "object_lock_configuration": [],
-            "object_lock_enabled": false,
-            "policy": "",
-            "region": "us-east-1",
-            "replication_configuration": [],
-            "request_payer": "BucketOwner",
-            "server_side_encryption_configuration": [
-              {
-                "rule": [
-                  {
-                    "apply_server_side_encryption_by_default": [
-                      {
-                        "kms_master_key_id": "",
-                        "sse_algorithm": "AES256"
-                      }
-                    ],
-                    "bucket_key_enabled": false
-                  }
-                ]
-              }
-            ],
             "tags": {
               "Name": "Example Bucket",
               "Owner": "terraform-apply-tutorial"
@@ -601,46 +556,19 @@
               "Name": "Example Bucket",
               "Owner": "terraform-apply-tutorial"
             },
-            "timeouts": null,
-            "versioning": [
-              {
-                "enabled": false,
-                "mfa_delete": false
-              }
-            ],
-            "website": [],
-            "website_domain": null,
-            "website_endpoint": null
+            "timeouts": null
           },
           "sensitive_values": {
             "cors_rule": [],
-            "grant": [
-              {
-                "permissions": [
-                  false
-                ]
-              }
-            ],
+            "grant": [],
             "lifecycle_rule": [],
             "logging": [],
             "object_lock_configuration": [],
             "replication_configuration": [],
-            "server_side_encryption_configuration": [
-              {
-                "rule": [
-                  {
-                    "apply_server_side_encryption_by_default": [
-                      {}
-                    ]
-                  }
-                ]
-              }
-            ],
+            "server_side_encryption_configuration": [],
             "tags": {},
             "tags_all": {},
-            "versioning": [
-              {}
-            ],
+            "versioning": [],
             "website": []
           }
         },
@@ -653,7 +581,6 @@
           "schema_version": 0,
           "values": {
             "acl": null,
-            "bucket": "terraform-20240716141403157800000001",
             "cache_control": null,
             "content": null,
             "content_base64": null,
@@ -695,6 +622,118 @@
       ]
     }
   },
+  "resource_drift": [
+    {
+      "address": "aws_s3_bucket.example",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "acceleration_status": "",
+          "acl": null,
+          "arn": "arn:aws:s3:::terraform-20240716141403157800000001",
+          "bucket": "terraform-20240716141403157800000001",
+          "bucket_domain_name": "terraform-20240716141403157800000001.s3.amazonaws.com",
+          "bucket_prefix": "terraform-",
+          "bucket_regional_domain_name": "terraform-20240716141403157800000001.s3.us-east-1.amazonaws.com",
+          "cors_rule": [],
+          "force_destroy": false,
+          "grant": [
+            {
+              "id": "d9450f1eec5292a76f9da82c2c50189761dd41e3ed5531d93fbcb114d2841fc3",
+              "permissions": [
+                "FULL_CONTROL"
+              ],
+              "type": "CanonicalUser",
+              "uri": ""
+            }
+          ],
+          "hosted_zone_id": "Z3AQBSTGFYJSTF",
+          "id": "terraform-20240716141403157800000001",
+          "lifecycle_rule": [],
+          "logging": [],
+          "object_lock_configuration": [],
+          "object_lock_enabled": false,
+          "policy": "",
+          "region": "us-east-1",
+          "replication_configuration": [],
+          "request_payer": "BucketOwner",
+          "server_side_encryption_configuration": [
+            {
+              "rule": [
+                {
+                  "apply_server_side_encryption_by_default": [
+                    {
+                      "kms_master_key_id": "",
+                      "sse_algorithm": "AES256"
+                    }
+                  ],
+                  "bucket_key_enabled": false
+                }
+              ]
+            }
+          ],
+          "tags": {
+            "Name": "Example Bucket",
+            "Owner": "terraform-apply-tutorial"
+          },
+          "tags_all": {
+            "Name": "Example Bucket",
+            "Owner": "terraform-apply-tutorial"
+          },
+          "timeouts": null,
+          "versioning": [
+            {
+              "enabled": false,
+              "mfa_delete": false
+            }
+          ],
+          "website": [],
+          "website_domain": null,
+          "website_endpoint": null
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {
+          "cors_rule": [],
+          "grant": [
+            {
+              "permissions": [
+                false
+              ]
+            }
+          ],
+          "lifecycle_rule": [],
+          "logging": [],
+          "object_lock_configuration": [],
+          "replication_configuration": [],
+          "server_side_encryption_configuration": [
+            {
+              "rule": [
+                {
+                  "apply_server_side_encryption_by_default": [
+                    {}
+                  ]
+                }
+              ]
+            }
+          ],
+          "tags": {},
+          "tags_all": {},
+          "versioning": [
+            {}
+          ],
+          "website": []
+        },
+        "after_sensitive": false
+      }
+    }
+  ],
   "resource_changes": [
     {
       "address": "aws_instance.main[0]",
@@ -1736,117 +1775,11 @@
       "provider_name": "registry.terraform.io/hashicorp/aws",
       "change": {
         "actions": [
-          "no-op"
+          "create"
         ],
-        "before": {
-          "acceleration_status": "",
-          "acl": null,
-          "arn": "arn:aws:s3:::terraform-20240716141403157800000001",
-          "bucket": "terraform-20240716141403157800000001",
-          "bucket_domain_name": "terraform-20240716141403157800000001.s3.amazonaws.com",
-          "bucket_prefix": "terraform-",
-          "bucket_regional_domain_name": "terraform-20240716141403157800000001.s3.us-east-1.amazonaws.com",
-          "cors_rule": [],
-          "force_destroy": false,
-          "grant": [
-            {
-              "id": "d9450f1eec5292a76f9da82c2c50189761dd41e3ed5531d93fbcb114d2841fc3",
-              "permissions": [
-                "FULL_CONTROL"
-              ],
-              "type": "CanonicalUser",
-              "uri": ""
-            }
-          ],
-          "hosted_zone_id": "Z3AQBSTGFYJSTF",
-          "id": "terraform-20240716141403157800000001",
-          "lifecycle_rule": [],
-          "logging": [],
-          "object_lock_configuration": [],
-          "object_lock_enabled": false,
-          "policy": "",
-          "region": "us-east-1",
-          "replication_configuration": [],
-          "request_payer": "BucketOwner",
-          "server_side_encryption_configuration": [
-            {
-              "rule": [
-                {
-                  "apply_server_side_encryption_by_default": [
-                    {
-                      "kms_master_key_id": "",
-                      "sse_algorithm": "AES256"
-                    }
-                  ],
-                  "bucket_key_enabled": false
-                }
-              ]
-            }
-          ],
-          "tags": {
-            "Name": "Example Bucket",
-            "Owner": "terraform-apply-tutorial"
-          },
-          "tags_all": {
-            "Name": "Example Bucket",
-            "Owner": "terraform-apply-tutorial"
-          },
-          "timeouts": null,
-          "versioning": [
-            {
-              "enabled": false,
-              "mfa_delete": false
-            }
-          ],
-          "website": [],
-          "website_domain": null,
-          "website_endpoint": null
-        },
+        "before": null,
         "after": {
-          "acceleration_status": "",
-          "acl": null,
-          "arn": "arn:aws:s3:::terraform-20240716141403157800000001",
-          "bucket": "terraform-20240716141403157800000001",
-          "bucket_domain_name": "terraform-20240716141403157800000001.s3.amazonaws.com",
-          "bucket_prefix": "terraform-",
-          "bucket_regional_domain_name": "terraform-20240716141403157800000001.s3.us-east-1.amazonaws.com",
-          "cors_rule": [],
           "force_destroy": false,
-          "grant": [
-            {
-              "id": "d9450f1eec5292a76f9da82c2c50189761dd41e3ed5531d93fbcb114d2841fc3",
-              "permissions": [
-                "FULL_CONTROL"
-              ],
-              "type": "CanonicalUser",
-              "uri": ""
-            }
-          ],
-          "hosted_zone_id": "Z3AQBSTGFYJSTF",
-          "id": "terraform-20240716141403157800000001",
-          "lifecycle_rule": [],
-          "logging": [],
-          "object_lock_configuration": [],
-          "object_lock_enabled": false,
-          "policy": "",
-          "region": "us-east-1",
-          "replication_configuration": [],
-          "request_payer": "BucketOwner",
-          "server_side_encryption_configuration": [
-            {
-              "rule": [
-                {
-                  "apply_server_side_encryption_by_default": [
-                    {
-                      "kms_master_key_id": "",
-                      "sse_algorithm": "AES256"
-                    }
-                  ],
-                  "bucket_key_enabled": false
-                }
-              ]
-            }
-          ],
           "tags": {
             "Name": "Example Bucket",
             "Owner": "terraform-apply-tutorial"
@@ -1855,78 +1788,48 @@
             "Name": "Example Bucket",
             "Owner": "terraform-apply-tutorial"
           },
-          "timeouts": null,
-          "versioning": [
-            {
-              "enabled": false,
-              "mfa_delete": false
-            }
-          ],
-          "website": [],
-          "website_domain": null,
-          "website_endpoint": null
+          "timeouts": null
         },
-        "after_unknown": {},
-        "before_sensitive": {
-          "cors_rule": [],
-          "grant": [
-            {
-              "permissions": [
-                false
-              ]
-            }
-          ],
-          "lifecycle_rule": [],
-          "logging": [],
-          "object_lock_configuration": [],
-          "replication_configuration": [],
-          "server_side_encryption_configuration": [
-            {
-              "rule": [
-                {
-                  "apply_server_side_encryption_by_default": [
-                    {}
-                  ]
-                }
-              ]
-            }
-          ],
+        "after_unknown": {
+          "acceleration_status": true,
+          "acl": true,
+          "arn": true,
+          "bucket": true,
+          "bucket_domain_name": true,
+          "bucket_prefix": true,
+          "bucket_regional_domain_name": true,
+          "cors_rule": true,
+          "grant": true,
+          "hosted_zone_id": true,
+          "id": true,
+          "lifecycle_rule": true,
+          "logging": true,
+          "object_lock_configuration": true,
+          "object_lock_enabled": true,
+          "policy": true,
+          "region": true,
+          "replication_configuration": true,
+          "request_payer": true,
+          "server_side_encryption_configuration": true,
           "tags": {},
           "tags_all": {},
-          "versioning": [
-            {}
-          ],
-          "website": []
+          "versioning": true,
+          "website": true,
+          "website_domain": true,
+          "website_endpoint": true
         },
+        "before_sensitive": false,
         "after_sensitive": {
           "cors_rule": [],
-          "grant": [
-            {
-              "permissions": [
-                false
-              ]
-            }
-          ],
+          "grant": [],
           "lifecycle_rule": [],
           "logging": [],
           "object_lock_configuration": [],
           "replication_configuration": [],
-          "server_side_encryption_configuration": [
-            {
-              "rule": [
-                {
-                  "apply_server_side_encryption_by_default": [
-                    {}
-                  ]
-                }
-              ]
-            }
-          ],
+          "server_side_encryption_configuration": [],
           "tags": {},
           "tags_all": {},
-          "versioning": [
-            {}
-          ],
+          "versioning": [],
           "website": []
         }
       }
@@ -1944,7 +1847,6 @@
         "before": null,
         "after": {
           "acl": null,
-          "bucket": "terraform-20240716141403157800000001",
           "cache_control": null,
           "content": null,
           "content_base64": null,
@@ -1964,6 +1866,7 @@
           "website_redirect": null
         },
         "after_unknown": {
+          "bucket": true,
           "bucket_key_enabled": true,
           "content_type": true,
           "id": true,
@@ -2012,11 +1915,10 @@
   "output_changes": {
     "bucket_name": {
       "actions": [
-        "no-op"
+        "update"
       ],
       "before": "terraform-20240716141403157800000001",
-      "after": "terraform-20240716141403157800000001",
-      "after_unknown": false,
+      "after_unknown": true,
       "before_sensitive": false,
       "after_sensitive": false
     }
@@ -2695,109 +2597,6 @@
             ]
           },
           {
-            "address": "aws_s3_bucket.example",
-            "mode": "managed",
-            "type": "aws_s3_bucket",
-            "name": "example",
-            "provider_name": "registry.terraform.io/hashicorp/aws",
-            "schema_version": 0,
-            "values": {
-              "acceleration_status": "",
-              "acl": null,
-              "arn": "arn:aws:s3:::terraform-20240716141403157800000001",
-              "bucket": "terraform-20240716141403157800000001",
-              "bucket_domain_name": "terraform-20240716141403157800000001.s3.amazonaws.com",
-              "bucket_prefix": "terraform-",
-              "bucket_regional_domain_name": "terraform-20240716141403157800000001.s3.us-east-1.amazonaws.com",
-              "cors_rule": [],
-              "force_destroy": false,
-              "grant": [
-                {
-                  "id": "d9450f1eec5292a76f9da82c2c50189761dd41e3ed5531d93fbcb114d2841fc3",
-                  "permissions": [
-                    "FULL_CONTROL"
-                  ],
-                  "type": "CanonicalUser",
-                  "uri": ""
-                }
-              ],
-              "hosted_zone_id": "Z3AQBSTGFYJSTF",
-              "id": "terraform-20240716141403157800000001",
-              "lifecycle_rule": [],
-              "logging": [],
-              "object_lock_configuration": [],
-              "object_lock_enabled": false,
-              "policy": "",
-              "region": "us-east-1",
-              "replication_configuration": [],
-              "request_payer": "BucketOwner",
-              "server_side_encryption_configuration": [
-                {
-                  "rule": [
-                    {
-                      "apply_server_side_encryption_by_default": [
-                        {
-                          "kms_master_key_id": "",
-                          "sse_algorithm": "AES256"
-                        }
-                      ],
-                      "bucket_key_enabled": false
-                    }
-                  ]
-                }
-              ],
-              "tags": {
-                "Name": "Example Bucket",
-                "Owner": "terraform-apply-tutorial"
-              },
-              "tags_all": {
-                "Name": "Example Bucket",
-                "Owner": "terraform-apply-tutorial"
-              },
-              "timeouts": null,
-              "versioning": [
-                {
-                  "enabled": false,
-                  "mfa_delete": false
-                }
-              ],
-              "website": [],
-              "website_domain": null,
-              "website_endpoint": null
-            },
-            "sensitive_values": {
-              "cors_rule": [],
-              "grant": [
-                {
-                  "permissions": [
-                    false
-                  ]
-                }
-              ],
-              "lifecycle_rule": [],
-              "logging": [],
-              "object_lock_configuration": [],
-              "replication_configuration": [],
-              "server_side_encryption_configuration": [
-                {
-                  "rule": [
-                    {
-                      "apply_server_side_encryption_by_default": [
-                        {}
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "tags": {},
-              "tags_all": {},
-              "versioning": [
-                {}
-              ],
-              "website": []
-            }
-          },
-          {
             "address": "random_pet.instance",
             "mode": "managed",
             "type": "random_pet",
@@ -2997,7 +2796,7 @@
       ]
     }
   ],
-  "timestamp": "2024-07-16T14:17:47Z",
+  "timestamp": "2024-07-16T14:26:18Z",
   "applyable": true,
   "complete": true,
   "errored": false
