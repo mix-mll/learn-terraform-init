@@ -64,3 +64,29 @@ Terraform configuration supports string interpolation — inserting the output o
 ```tf
   name = "web-sg-${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
 ```
+
+
+# variable validatiions
+The regexall() function takes a regular expression and a string to test it against, and returns a list of matches found in the string. In this case, the regular expression will match a string that contains anything other than a letter, number, or hyphen.
+```tf
+variable "r_tag" {
+  description = "Tags to set for all resources"
+  type        = map(string)
+  default     = {
+    id     = "my-project",
+    env = "dev"
+  }
+
+  validation {
+    condition     = length(var.r_tag["id"]) <= 16 && length(regexall("[^a-zA-Z0-9-]", var.r_tag["id"])) == 0
+    error_message = "The id tag must be no more than 16 characters, and only contain letters, numbers, and hyphens."
+  }
+
+}
+
+```
+
+Now test the validation rules by specifying an environment tag that is too long. Notice that the command will fail and return the error message specified in the validation block.
+```
+terraform apply -var='resource_tags={project="my-project",environment="development"}'
+```
