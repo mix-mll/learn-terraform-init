@@ -47,3 +47,8 @@ The slice() function takes three arguments: the list to slice, the start index, 
   terraform console
   var.resource_tags["environment"]
 ```
+
+# Apply this configuration now, using the -var command line flag
+```
+  terraform apply -var ec2_instance_type=t2.micro
+```
