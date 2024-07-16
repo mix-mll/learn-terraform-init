@@ -25,8 +25,12 @@ tf_plan:
 show:
 	terraform show "tfplan"
 
-apply:
+apply_plan:
+# no need for approve
 	terraform apply "tfplan"
+
+apply:
+	terraform apply --auto-approve
 
 plan_to_json:
 	terraform show -json "tfplan" | jq > tfplan.json
