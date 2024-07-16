@@ -29,3 +29,21 @@ The slice() function takes three arguments: the list to slice, the start index, 
 ```
     exit
 ```
+
+# map variable Setting the type to map(string) tells Terraform to expect strings for the values in the map. Map keys are always strings. 
+```
+  variable "resource_tags" {
+    description = "Tags to set for all resources"
+    type        = map(string)
+    default     = {
+      project     = "project-alpha",
+      environment = "dev"
+    }
+  }
+```
+
+# explor the map
+```
+  terraform console
+  var.resource_tags["environment"]
+```

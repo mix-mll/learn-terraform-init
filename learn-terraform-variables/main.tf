@@ -27,10 +27,11 @@ module "vpc" {
   enable_vpn_gateway = var.enable_vpn_gateway
 
 
-  tags = {
-    project     = "project-alpha",
-    environment = "dev"
-  }
+  # tags = {
+  #   project     = "project-alpha",
+  #   environment = "dev"
+  # }
+  tags = var.resource_tags
 }
 
 module "app_security_group" {
