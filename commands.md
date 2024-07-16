@@ -52,3 +52,15 @@ The slice() function takes three arguments: the list to slice, the start index, 
 ```
   terraform apply -var ec2_instance_type=t2.micro
 ```
+
+
+# using a variable file
+Terraform automatically loads all files in the current directory with the exact name terraform.tfvars or matching *.auto.tfvars. You can also use the -var-file flag to specify other files by name.
+
+
+# string interpolation
+Terraform configuration supports string interpolation — inserting the output of an expression into a string. This allows you to use variables, local values, and the output of functions to create strings in your configuration.
+
+```tf
+  name = "web-sg-${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
+```
