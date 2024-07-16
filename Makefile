@@ -25,6 +25,9 @@ tf_plan:
 show:
 	terraform show "tfplan"
 
+apply:
+	terraform apply "tfplan"
+
 plan_to_json:
 	terraform show -json "tfplan" | jq > tfplan.json
 
@@ -46,3 +49,6 @@ destoy_plan:
 
 destroy_apply:
 	terraform apply "tfplan-destroy"
+
+destroy:
+	terraform destroy --auto-approve
