@@ -19,3 +19,9 @@ variable "instance_count" {
   type        = number
   default     = 2
 }
+
+variable "enable_vpn_gateway" {
+  description = "Enable a VPN gateway in your VPC."
+  type        = bool
+  default     = false
+}
